@@ -25,7 +25,7 @@ export class Quizinfo extends Component {
       
 componentDidMount(){
        console.log("entered quiz edit CDM " + this.props.match.params.id);
-         axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/quiz`)
+         axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/quiz`)
          .then((response) => {
             console.log("quiz returned in frontend : ", response.data);
             this.setState({      

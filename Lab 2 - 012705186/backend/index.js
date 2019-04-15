@@ -41,7 +41,7 @@ const Lectures = require('./models/lectures');
 const Messages = require('./models/messages');
 app.use(bodyParser.json());
 app.set("view engine","ejs");
-app.use(cors({origin:"http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3000"}));
+app.use(cors({origin:"http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3000"}));
 app.use(session({
     secret: 'mysecret',
     resave: false,
@@ -77,7 +77,7 @@ require('./config/passport')(passport);
 // });
 
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3000');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');

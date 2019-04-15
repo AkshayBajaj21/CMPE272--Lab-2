@@ -5,7 +5,7 @@ var mysql = require('mysql');
 // function getConnection(){
     //var connection = mysql.createConnection({
     var pool  = mysql.createPool({
-        host     : 'ec2-13-57-189-225.us-west-1.compute.amazonaws.com',
+        host     : 'ec2-54-215-144-28.us-west-1.compute.amazonaws.com',
         user     : 'root',
         password : 'Cricket2012@',
         database : 'sjsu_canvas',

@@ -26,7 +26,7 @@ export class Assignment extends Component {
 
     componentDidMount(){
       //  console.log("entered announcement edit CDM " + this.props.match.params.id);
-          axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
+          axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
           .then((response) => {
              console.log("peoples returned in assignment : " ,response.data);
              this.setState({      
@@ -50,7 +50,7 @@ export class Assignment extends Component {
         })
         .then( (value) =>{
           console.log("Line for pagination 31",this.state.page);
-          axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
+          axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
           .then((response)=>{
             if(response.data.data.message==="success"){
               // alert("Action completed."); 
@@ -70,7 +70,7 @@ export class Assignment extends Component {
         })
         .then( (value) =>{
           console.log("Line for pagination 31",this.state.page);
-          axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
+          axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment/${this.state.page}`)
           .then((response)=>{
             if(response.data.data.message==="success"){
               // alert("Action completed."); 

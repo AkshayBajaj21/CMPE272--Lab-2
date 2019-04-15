@@ -47,7 +47,7 @@ export class Login extends Component {
         }
         
         console.log("Data in frontend send from login to server is" +data.id);
-        axios.post("http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/login", data)
+        axios.post("http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/login", data)
             .then(response => {
                 console.log("Data in frontend after kafka",response.data.data )
                 if(response.data.data.message==="success"){

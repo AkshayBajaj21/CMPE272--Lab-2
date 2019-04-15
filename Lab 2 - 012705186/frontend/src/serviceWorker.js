@@ -11,10 +11,10 @@
 // opt-in, read http://bit.ly/CRA-PWA
 
 const isLocalhost = Boolean(
-  window.location.hostname === 'ec2-13-57-189-225.us-west-1.compute.amazonaws.com' ||
-    // [::1] is the IPv6 ec2-13-57-189-225.us-west-1.compute.amazonaws.com address.
+  window.location.hostname === 'ec2-54-215-144-28.us-west-1.compute.amazonaws.com' ||
+    // [::1] is the IPv6 ec2-54-215-144-28.us-west-1.compute.amazonaws.com address.
     window.location.hostname === '[::1]' ||
-    // 127.0.0.1/8 is considered ec2-13-57-189-225.us-west-1.compute.amazonaws.com for IPv4.
+    // 127.0.0.1/8 is considered ec2-54-215-144-28.us-west-1.compute.amazonaws.com for IPv4.
     window.location.hostname.match(
       /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
     )
@@ -35,10 +35,10 @@ export function register(config) {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
       if (isLocalhost) {
-        // This is running on ec2-13-57-189-225.us-west-1.compute.amazonaws.com. Let's check if a service worker still exists or not.
+        // This is running on ec2-54-215-144-28.us-west-1.compute.amazonaws.com. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
 
-        // Add some additional logging to ec2-13-57-189-225.us-west-1.compute.amazonaws.com, pointing developers to the
+        // Add some additional logging to ec2-54-215-144-28.us-west-1.compute.amazonaws.com, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
           console.log(
@@ -47,7 +47,7 @@ export function register(config) {
           );
         });
       } else {
-        // Is not ec2-13-57-189-225.us-west-1.compute.amazonaws.com. Just register service worker
+        // Is not ec2-54-215-144-28.us-west-1.compute.amazonaws.com. Just register service worker
         registerValidSW(swUrl, config);
       }
     });

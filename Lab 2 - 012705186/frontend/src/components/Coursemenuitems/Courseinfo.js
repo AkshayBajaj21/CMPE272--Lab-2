@@ -43,7 +43,7 @@ export class Courseinfo extends Component {
     e.preventDefault();
     const data = {action: this.state.action};
     console.log("Entered drop course handler " + data.action); 
-    axios.post(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/information`,data)
+    axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/information`,data)
     .then((response)=>{
      // if(response.data.message==="success"){
         alert("Action completed.");
@@ -56,7 +56,7 @@ export class Courseinfo extends Component {
   componentDidMount(){
     console.log("entered course info CDM " + this.props.match.params.id);
 
-     axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/information`)
+     axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/information`)
      .then((response) => {
        console.log("information returned in frontend : " , response.data);
        this.setState({      

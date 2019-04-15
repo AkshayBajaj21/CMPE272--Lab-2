@@ -10,7 +10,7 @@ var http = require("http");
 describe('User profile', function() {
 
     it('Get /profile', function(done) {
-        request.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/profile', {
+        request.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/profile', {
             form : {
                 userid : 2012
             }
@@ -24,7 +24,7 @@ describe('User profile', function() {
 describe('view courses', function() {
 
     it('Get /courses', function(done) {
-        request.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course?next', {
+        request.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course?next', {
             form : {
                 facultyid : 2012
             }
@@ -38,7 +38,7 @@ describe('view courses', function() {
 describe('view course information', function() {
 
     it('Get /courses/:id/information/:page', function(done) {
-        request.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/876/information?next', {
+        request.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/876/information?next', {
             form : {
                 facultyid : 2012
             }
@@ -52,7 +52,7 @@ describe('view course information', function() {
 describe('view assignment info', function() {
 
     it('Get /courses/:id/assignment/:page', function(done) {
-        request.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course?786/assignment?next', {
+        request.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course?786/assignment?next', {
             form : {
                 courseid : 786
             }
@@ -66,7 +66,7 @@ describe('view assignment info', function() {
 describe('view announcement info', function() {
 
     it('Get /courses/:id/announcement/:page', function(done) {
-        request.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course?786/announcement?next', {
+        request.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course?786/announcement?next', {
             form : {
                 courseid : 786
             }

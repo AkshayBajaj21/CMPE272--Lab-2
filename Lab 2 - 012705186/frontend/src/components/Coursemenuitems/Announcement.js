@@ -28,7 +28,7 @@ export class Announcement extends Component {
     }
     componentDidMount(){
        console.log("entered announcement edit CDM " + this.props.match.params.id);
-         axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
+         axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
          .then((response) => {
             console.log("announcement returned in frontend : " ,response.data);
             this.setState({      
@@ -59,7 +59,7 @@ export class Announcement extends Component {
         })
         .then( (value) =>{
           console.log("Line for announcement pagination 31",this.state.page);
-          axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
+          axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
           .then((response)=>{
             if(response.data.data.message==="success"){
               // alert("Action completed."); 
@@ -79,7 +79,7 @@ export class Announcement extends Component {
         })
         .then( (value) =>{
           console.log("Line for pagination 31",this.state.page);
-          axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
+          axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement/${this.state.page}`)
           .then((response)=>{
             console.log(response.data.data)
             if(response.data.data.message==="success"){
@@ -94,7 +94,7 @@ export class Announcement extends Component {
         const data = {title: this.state.title,
                       content: this.state.content};
         console.log(data);              
-        axios.post(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement`,data)
+        axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/announcement`,data)
         .then((response)=>{
           console.log("reponse for announcement edit is ",response.data)
           if(response.data.data.message==="success"){

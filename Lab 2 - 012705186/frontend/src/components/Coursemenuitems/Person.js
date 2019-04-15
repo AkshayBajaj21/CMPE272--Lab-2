@@ -31,7 +31,7 @@ export class Person extends Component {
             action: this.state.action
         };
         console.log(data);
-        axios.post(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people`,data)
+        axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people`,data)
         .then((result)=>{
             if(result.data.data.message==="error"){
                 alert("Something went wrong.")

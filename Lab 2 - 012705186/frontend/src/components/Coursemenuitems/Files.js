@@ -22,7 +22,7 @@ export class File extends Component {
   }
 
   componentDidMount(){
-    axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/file`)
+    axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/file`)
     .then((response)=>{
        console.log(response.data);
       this.setState({
@@ -41,7 +41,7 @@ export class File extends Component {
     e.preventDefault();
     let data = new FormData();
     data.append('lecturefile',this.state.file);
-    axios.post(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/file`,data)
+    axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/file`,data)
     .then((response)=>{
         console.log("response after file add from kafka ",response.data)
       if(response.data.data.message==="success"){
@@ -69,7 +69,7 @@ export class File extends Component {
             <div className="col-9 coursecolumn">
               <h3 ><b>Files</b></h3>
               {files.map((file,index)=>{
-                return <div key={index} className="filelist" ><a href={`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/uploads/${file.fpath}`} download target="_blank" rel="noopener noreferrer" >{file.fname}</a></div>
+                return <div key={index} className="filelist" ><a href={`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/uploads/${file.fpath}`} download target="_blank" rel="noopener noreferrer" >{file.fname}</a></div>
               })}
               <br/>
               <br/>

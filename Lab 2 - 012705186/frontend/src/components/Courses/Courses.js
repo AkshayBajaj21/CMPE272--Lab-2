@@ -37,7 +37,7 @@ nextPageHandler = (e) => {
   })
   .then( (value) =>{
     console.log("Line for pagination 31",this.state.page);
-    axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
+    axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
     .then((response)=>{
       if(response.data.data.message==="success"){
         // alert("Action completed."); 
@@ -57,7 +57,7 @@ previousPageHandler = (e) => {
   })
   .then( (value) =>{
     console.log("Line for pagination 31",this.state.page);
-    axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
+    axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
     .then((response)=>{
       if(response.data.data.message==="success"){
         // alert("Action completed."); 
@@ -73,7 +73,7 @@ previousPageHandler = (e) => {
 //       page : "previous"
 //   });
 //   console.log("Line for pagination 45",this.state.page);
-//   axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
+//   axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
 //   .then((response)=>{
 //     if(response.data.message==="success"){
 //       alert("Action completed.");
@@ -84,7 +84,7 @@ previousPageHandler = (e) => {
 
   componentDidMount(){
    console.log("entered CDM of course is page is ",this.state.page);
-    axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
+    axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.page}`)
     .then((response) => {
       console.log("props sent to course action are ", response.data.data.courses)
       this.props.getCourses(response.data.data.courses);

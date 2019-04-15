@@ -59,7 +59,7 @@ export class Signup extends Component {
             password: this.state.password,
             role: this.state.role
         }
-        axios.post("http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/signup", data)
+        axios.post("http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/signup", data)
             .then(response => {
                 console.log("entered signup frontebnd after kafka response ",response.data.data);
                 if (response.data.data.message === "success") {

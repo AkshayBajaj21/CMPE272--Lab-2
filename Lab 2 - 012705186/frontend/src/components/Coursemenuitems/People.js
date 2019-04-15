@@ -24,7 +24,7 @@ export class People extends Component {
   }
     componentDidMount(){
       console.log("entered people line 26 CDM");
-       axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
+       axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
        .then((response) => {
          console.log("peoples returned in frontend : " + response.data.data.people);
          this.setState({      
@@ -44,7 +44,7 @@ export class People extends Component {
       })
       .then( (value) =>{
         console.log("Line for pagination 31",this.state.page);
-        axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
+        axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
         .then((response)=>{
           if(response.data.data.message==="success"){
             // alert("Action completed."); 
@@ -64,7 +64,7 @@ export class People extends Component {
       })
       .then( (value) =>{
         console.log("Line for pagination 31",this.state.page);
-        axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
+        axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
         .then((response)=>{
           if(response.data.data.message==="success"){
             // alert("Action completed."); 

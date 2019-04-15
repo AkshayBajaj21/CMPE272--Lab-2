@@ -27,7 +27,7 @@ export class Message extends Component {
     }
     componentDidMount(){
        console.log("entered message edit CDM ");
-         axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
+         axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
          .then((response) => {
             console.log("messages returned in frontend : ",response.data.data.messages);
             this.setState({      
@@ -56,7 +56,7 @@ export class Message extends Component {
       })
       .then( (value) =>{
         console.log("Line for announcement pagination 31",this.state.page);
-        axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
+        axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
         .then((response)=>{
           if(response.data.data.message==="success"){
             // alert("Action completed."); 
@@ -76,7 +76,7 @@ export class Message extends Component {
       })
       .then( (value) =>{
         console.log("Line for pagination 31",this.state.page);
-        axios.get(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
+        axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/message/${this.state.page}`)
         .then((response)=>{
           if(response.data.data.message==="success"){
             // alert("Action completed."); 
@@ -91,7 +91,7 @@ export class Message extends Component {
       const data = {receiver: this.state.receiver,
                     content: this.state.content};
       console.log(data);              
-      axios.post('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/message',data)
+      axios.post('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/message',data)
       .then((response)=>{
         if(response.data.data.message==="success"){
           alert("Message sent successfully");

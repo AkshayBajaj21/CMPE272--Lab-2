@@ -90,7 +90,7 @@ export class Quiz extends Component {
                       op22: this.state.op22,
                     };
         console.log("Data sent to backend for quiz creation :",data);              
-        axios.post(`http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/quiz`,data)
+        axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/quiz`,data)
         .then((response)=>{
           console.log("reponse for announcement edit is ",response.data)
           if(response.data.data.message==="success"){

@@ -88,7 +88,7 @@ export class Coursecreate extends Component {
             cterm: this.state.cterm
             
     }
-    axios.post("http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/course/new", data)
+    axios.post("http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/new", data)
     .then(response => {
         console.log("entered cousre add frontebnd");
         if (response.data.data.message === "success") {

@@ -40,7 +40,7 @@ export class EditProfile extends Component {
 
     componentDidMount(){
         console.log("entered profile edit CDM");
-        //  axios.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/profile')
+        //  axios.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/profile')
         //  .then((response) => {
         //    console.log(response.data);
         //    console.log('email id retreived from redux' , this.props.userdata.email)
@@ -142,7 +142,7 @@ export class EditProfile extends Component {
             role: this.state.role
         }
         console.log('Data sent to server profile edit' ,data)       
-         axios.post("http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/profile/edit", data)
+         axios.post("http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/profile/edit", data)
             .then(response => {
                 console.log("entered edit profile frontebnd",response.data);
                 if (response.data.data.message === "success") {

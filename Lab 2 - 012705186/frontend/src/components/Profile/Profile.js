@@ -17,7 +17,7 @@ export class Profile extends Component {
   }
   componentDidMount(){
     console.log("entered profile CDM");
-     axios.get('http://ec2-13-57-189-225.us-west-1.compute.amazonaws.com:3001/profile')
+     axios.get('http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/profile')
      .then((response) => {
        console.log(response.data.data);
       //  this.props.afterlogin(response.data);
