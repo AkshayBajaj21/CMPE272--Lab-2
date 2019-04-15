@@ -16,7 +16,8 @@ export class Courseinfo extends Component {
     }
     this.state =
     { cid: this.props.match.params.id,
-      information : []
+      information : [],
+      statinfo : ""
     }
     this.dropHandler = this.dropHandler.bind(this);
     this.enrollHandler = this.enrollHandler.bind(this);

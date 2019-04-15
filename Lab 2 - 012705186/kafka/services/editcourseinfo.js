@@ -36,12 +36,14 @@ function handle_request(msg, callback) {
         console.log("entered action ",msg.msg.action); 
         let cuid = currentuser.id;
         let cuname = currentuser.name;
+        let getstatus = msg.msg.action;
         var info = {
         'uid' : cuid,
         'uname' : cuname,
-        'status' : msg.msg.action   
+        'status' : getstatus
         }
-        Courses.update({'courseid': msg.id }, {$push: {studentinfo: info}})
+        console.log("message")
+        Courses.updateOne({'courseid': msg.id }, {$push: {studentinfo: info}})
         .exec()
         .then( result => {
                console.log("Entered update profile of mongoose db and result is",result.nModified);
