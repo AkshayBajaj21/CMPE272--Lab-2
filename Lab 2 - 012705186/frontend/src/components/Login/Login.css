@@ -1,0 +1,25 @@
+.login{
+  text-align: center;
+  border: 1.5px rgb(155, 155, 155) solid;
+  margin:100px auto;
+  padding:50px;
+  width: fit-content;
+}
+
+.loginlogo{
+  padding:10px;
+}
+
+.login input{
+  padding: 5px;
+  margin:5px;
+  width: 100%;
+}
+
+.login input[type="submit"]{
+  width: 100%;
+}
+
+.login input[type="text"]{
+  width: 100%;
+}

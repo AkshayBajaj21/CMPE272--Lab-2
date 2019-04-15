@@ -1,0 +1,11 @@
+.quizform input{
+    margin: 5px;
+}
+
+.quizquestion{
+    width: 100%;
+}
+
+.option{
+    display: inline;
+}

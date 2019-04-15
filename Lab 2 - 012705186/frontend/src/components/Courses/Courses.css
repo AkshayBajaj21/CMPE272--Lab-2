@@ -1,0 +1,37 @@
+.studcourses{
+    margin:0 0 20px 100px;
+}
+
+.cards{
+    display: inline-block;
+    margin: 20px 25px;
+    height: 215px;
+    width: 200px;
+    text-align: center;
+}
+
+.cardcolor{
+    height: 100px;
+    width: 200px;
+}
+
+.btn-danger{
+    margin-bottom: 17px;
+}
+.pageContent{
+    margin:50px 50px 0 120px;
+}
+
+.mycourses{
+    margin:0 auto;
+    padding: 0 0 0 50px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}

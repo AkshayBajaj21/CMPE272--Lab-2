@@ -1,0 +1,53 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jest-enzyme": "^7.0.2",
+    "js-cookie": "^2.2.0",
+    "mysql": "^2.16.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "react": "^16.8.6",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.8.6",
+    "react-draggable": "^3.2.1",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-script": "^2.0.5",
+    "react-scripts": "^2.1.5",
+    "react-test-renderer": "^16.8.6",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0",
+    "redux-promise": "^0.6.0",
+    "save": "^2.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jest": "^24.7.1"
+  }
+}

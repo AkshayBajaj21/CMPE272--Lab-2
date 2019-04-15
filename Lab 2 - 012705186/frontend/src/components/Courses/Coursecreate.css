@@ -1,0 +1,10 @@
+.tablecourse{
+    margin: 40px 0 0 120px;
+    padding: 50px;
+    height: 300px;
+    /* border: 1px solid black; */
+}
+
+.tablecourse td{
+    padding: 2.5px;
+}

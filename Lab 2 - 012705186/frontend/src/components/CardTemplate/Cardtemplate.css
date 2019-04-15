@@ -1,0 +1,19 @@
+.coursecard{
+    display: inline-block;
+    margin: 20px 25px;
+    height:100%;
+    width: 200px;
+    text-align: center;
+}
+.cardcolor{
+    
+    height: 100px;
+    width: 200px;
+}
+.cardlink{
+    color: rgba(0, 0, 0, 0.863);
+}
+
+.term{
+    color:grey;
+}

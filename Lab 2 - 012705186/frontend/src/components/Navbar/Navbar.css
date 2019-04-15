@@ -1,0 +1,31 @@
+.navbar{
+  padding: 0;
+  float: left;
+  width: fit-content;
+}
+
+#navigation-bar{
+  color:white;
+  background-color: rgb(30, 60, 192);
+  display: flex;
+  width: fit-content;
+  height: 100vh; 
+}
+
+#navigation-bar img{
+  background-color: white;
+  width: 100px;
+  height: 70px;
+}
+
+.navul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+}
