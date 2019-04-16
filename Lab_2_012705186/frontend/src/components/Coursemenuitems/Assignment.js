@@ -119,9 +119,9 @@ export class Assignment extends Component {
                         <div className="col-9">
                             {assignment.map((assignment, index) => {
                                 return <div key={index}><h5>{assignment.assignment}<hr /></h5>
-                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Student ID" ></input>:<span></span>}  &nbsp;&nbsp;
-                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Grade" ></input>:<span></span>} &nbsp;&nbsp;
-                                {(Cookies.get('role')==="student")
+                               {(Cookies.get('role')==="faculty")?<input type="text" placeholder="Student ID" ></input>:<span></span>}  &nbsp;&nbsp;
+                               {(Cookies.get('role')==="faculty")?<input type="text" placeholder="Grade" ></input>:<span></span>} &nbsp;&nbsp;
+                                {(Cookies.get('role')==="faculty")
                                 ?<button className="btn btn-danger" onClick={this.gradeHandler}>GRADE</button>
                                 :<span></span>
                                 }
@@ -130,7 +130,7 @@ export class Assignment extends Component {
 
                     
                     {/* {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null} */}
-                    {(Cookies.get('role')==="student")?<form onSubmit={this.submitHandler}>                            
+                    {(Cookies.get('role')==="faculty")?<form onSubmit={this.submitHandler}>                            
                                 <textarea rows="5" cols="50" placeholder="Create new Assignment" onChange={this.contentHandler}></textarea><br/>
                                 <input type="submit" value="Submit" className="btn btn-primary"></input>
                             </form> :null}
