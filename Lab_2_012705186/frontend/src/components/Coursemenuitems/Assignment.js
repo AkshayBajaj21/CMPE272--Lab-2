@@ -17,12 +17,13 @@ export class Assignment extends Component {
             assignment: [],
             files: [],
             page : "nothing",
-            toupload: ""
+            content: ""
         }
         // this.touploadHandler = this.touploadHandler.bind(this);
         this.previousPageHandler = this.previousPageHandler.bind(this);
         this.nextPageHandler = this.nextPageHandler.bind(this);
         this.gradeHandler = this.gradeHandler.bind(this);
+        this.submitHandler = this.submitHandler.bind(this);
         this.contentHandler = this.contentHandler.bind(this);
     }
 
@@ -45,9 +46,9 @@ export class Assignment extends Component {
          this.props.history.push(`/course/${this.state.cid}/info`);
     }
     contentHandler = (e) => {
-      e.preventDefault();
-       alert("Grade assigned to student successfully");  
-       this.props.history.push(`/course/${this.state.cid}/info`);
+      this.setState({
+          content: e.target.value
+      });
   }
 
     nextPageHandler = (e) => {
@@ -89,6 +90,20 @@ export class Assignment extends Component {
           });
         })
       }
+      submitHandler = (e) =>{
+        e.preventDefault();
+        const data = {content: this.state.content};
+        console.log(data);              
+        axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment`,data)
+        .then((response)=>{
+          console.log("reponse for announcement edit is ",response.data)
+          if(response.data.data.message==="success"){
+            alert("Action completed.");
+            this.props.history.index = 0;
+            window.location.reload();
+          }
+        });
+      }
     render() {
         const isFaculty = Cookies.get("role") === "faculty";
         let files = ['Assignment 1', 'Assignment 2', 'Assignment 3'];
@@ -120,9 +135,9 @@ export class Assignment extends Component {
                         </div>
 
                     
-                    {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null}
+                    {/* {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null} */}
                     {(Cookies.get('role')==="student")?<form onSubmit={this.submitHandler}>                            
-                                <textarea rows="5" cols="50" placeholder="Assignment" onChange={this.contentHandler}></textarea><br/>
+                                <textarea rows="5" cols="50" placeholder="Create new Assignment" onChange={this.contentHandler}></textarea><br/>
                                 <input type="submit" value="Submit" className="btn btn-primary"></input>
                             </form> :null}
                             </div>
