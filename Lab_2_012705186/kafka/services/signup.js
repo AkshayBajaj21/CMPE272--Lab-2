@@ -36,6 +36,7 @@ function handle_request(msg, callback) {
             name : msg.name,
             userid : msg.id,
             role : msg.role,
+            email : msg.email,
             password : check
         });
         users.save().then(result => {
