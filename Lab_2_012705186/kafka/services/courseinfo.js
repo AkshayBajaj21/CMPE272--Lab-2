@@ -22,7 +22,8 @@ function handle_request(msg, callback) {
           console.log("length of students is" ,doc[0].studentinfo[1].status)
           console.log("length of students is" ,uid2)
           for (let i=0; i < l; i++){
-          if((doc[0].studentinfo[0].uid) === uid2){
+          console.log(" ",doc[0].studentinfo[i].uid)
+          if((doc[0].studentinfo[i].uid) == uid2){
              
             studentStatus = doc[0].studentinfo[i].status;
             console.log("studnet status is at 572",studentStatus);
