@@ -21,11 +21,12 @@ function handle_request(msg, callback) {
             console.log("studnet status is at 572",studentStatus);
           }
       }
-       if (!studentStatus){
-        returnObj.status = "none";
+       if (studentStatus){
+        returnObj.status = studentStatus;  
        } 
        else{
         console.log("The status is "+ studentStatus)
+        returnObj.status = "none";
         returnObj.status = studentStatus;  
        }
        var information = [];                  
