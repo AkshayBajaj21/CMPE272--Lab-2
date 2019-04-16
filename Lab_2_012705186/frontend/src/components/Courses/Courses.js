@@ -122,7 +122,7 @@ previousPageHandler = (e) => {
               <div class="wrapper">
               {isStudent
               ?<Link to="course/new"><button className="btn btn-primary">Add Course</button></Link>:null}
-              // <Link to="course/search"><button className="btn btn-primary">Search Course</button></Link>}
+               {/* <Link to="course/search"><button className="btn btn-primary">Search Course</button></Link>} */}
             <br/><br/>
             
           <button  class="button" className="btn btn-primary" onClick={this.previousPageHandler}>Previous Page</button>&nbsp;&nbsp;
