@@ -7,7 +7,7 @@ var currentuser = cu.getUser();
 function handle_request(msg, callback) {
     console.log("entered kafka view  course information");
     let returnObj = {};
-    let uid = currentuser.id;
+    let uid2 = currentuser.id;
     let ccid  = msg.id
     let studentStatus;
     console.log(uid);
@@ -17,10 +17,11 @@ function handle_request(msg, callback) {
           console.log("length of students is" ,doc[0].studentinfo[1])
           console.log("length of students is" ,doc[0].studentinfo.length)
           console.log("length of students is" ,doc[0].studentinfo[1].uid)
+          console.log("length of students is" ,uid2)
           console.log("length of students is" ,doc[0].studentinfo[1].status)
           console.log("length of students is" ,uid)
           for (let i=0; i < doc[0].studentinfo.length; i++){
-          if(doc[0].studentinfo[i].uid === uid){
+          if((doc[0].studentinfo[i].uid) === uid2){
             studentStatus = doc[0].studentinfo[i].status;
             console.log("studnet status is at 572",studentStatus);
           }
