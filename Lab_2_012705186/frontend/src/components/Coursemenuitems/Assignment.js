@@ -97,7 +97,7 @@ export class Assignment extends Component {
         axios.post(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/assignment`,data)
         .then((response)=>{
           console.log("reponse for announcement edit is ",response.data)
-          if(response.data.data.message==="success"){
+          if(response.data.message==="success"){
             alert("Action completed.");
             this.props.history.index = 0;
             window.location.reload();

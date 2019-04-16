@@ -1566,6 +1566,35 @@ app.post("/course/:id/quiz", (req,res) => {
         }
     });
 })
+
+app.post("/course/:id/assignment", (req,res) => {
+    console.log("Data for new courses in server side is :" +req.body.content);
+    let returnObj = {}
+    var cid = req.params.id;
+    var content = req.body.content;
+    var info = {
+        'content' : content
+        }
+        Courses.updateOne({'courseid': req.params.id }, {$push: {assignmentinfo: info}})
+        .exec()
+        .then( result => {
+            //    console.log("Entered update announcementinfo of mongoose db and result is");
+                if (result.nModified ===1){
+                //  console.log("success at backend announcementinfo update");
+                 returnObj.message = "success";               
+                 returnObj.data = "announcementinfo updated successfully!";
+                //  console.log("announcementinfo update at backend cousradd end");
+                 res.json(returnObj);
+              }
+        })
+        .catch(err => {
+         console.log("Entered CATCH  update announcementinfo of mongoose db and error is ",err);
+         returnObj.message = "error";               
+         returnObj.data = "announcementinfo unsuccessfully!";
+         res.json(returnObj);
+        })
+    })
+
 app.listen(3001,() =>
     console.log("Server started on port 3001")
 );
