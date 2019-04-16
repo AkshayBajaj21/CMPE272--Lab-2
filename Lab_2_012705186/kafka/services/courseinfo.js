@@ -22,6 +22,7 @@ function handle_request(msg, callback) {
           }
       }
        if (studentStatus){
+        console.log("The status is "+ studentStatus)
         returnObj.status = studentStatus;  
        } 
        else{

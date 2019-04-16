@@ -42,7 +42,7 @@ function handle_request(msg, callback) {
         'uname' : cuname,
         'status' : getstatus
         }
-        console.log("message")
+        console.log("info pushed is ",info)
         Courses.updateOne({'courseid': msg.id }, {$push: {studentinfo: info}})
         .exec()
         .then( result => {
