@@ -35,7 +35,9 @@ function handle_request(msg, callback) {
       console.log("Line 35",l)
       if(peopleSkip > l){
         peopleFlag = 1;  
-        peopleSkip = doc[0].studentinfo.length ;
+        peopleSkip = l;
+        console.log("Line 35=7",peopleSkip)
+        
       }    
       if(offset >= peopleSkip){
         offset -= 4;
