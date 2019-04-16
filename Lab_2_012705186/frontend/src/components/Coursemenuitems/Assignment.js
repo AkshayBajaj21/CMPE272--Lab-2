@@ -126,13 +126,7 @@ export class Assignment extends Component {
                                 :<span></span>
                                 }
                             </div>
-                            })}
-                            {/* {(isFaculty)?
-                            <form>
-                                <h3>Upload Assignment:   </h3><input type="file" name="lecturenote" onChange={this.touploadHandler} />
-                                <input type="submit" value="Upload" />
-                            </form>:null} */}
-                        </div>
+                            })}                     
 
                     
                     {/* {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null} */}
@@ -140,7 +134,7 @@ export class Assignment extends Component {
                                 <textarea rows="5" cols="50" placeholder="Create new Assignment" onChange={this.contentHandler}></textarea><br/>
                                 <input type="submit" value="Submit" className="btn btn-primary"></input>
                             </form> :null}
-                            </div>
+                            </div></div>
                     <div class="wrapper">
                          <button  class="button" className="btn btn-primary" onClick={this.previousPageHandler}>Previous Page</button>&nbsp;&nbsp;
                          <button class="button" className="btn btn-primary" onClick={this.nextPageHandler}>Next Page</button>
