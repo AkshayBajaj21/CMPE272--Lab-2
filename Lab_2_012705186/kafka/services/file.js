@@ -10,7 +10,7 @@ var currentuser = cu.getUser();
 var filepath = "";
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/uploads/')
+        cb(null, './public/upload/')
     },
     filename: function (req, file, cb) {
         filepath = file.originalname + Date.now() + path.extname(file.originalname)
