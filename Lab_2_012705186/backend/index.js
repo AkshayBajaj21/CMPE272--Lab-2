@@ -1379,8 +1379,9 @@ app.get("/course/:id/file", (req, res) => {
 
 app.post("/course/:id/file",upload.single('lecturefile'),(req,res)=>{
     req.params.msg = req.file;
+    req.params.filepath = filepath;
     kafka.make_request('addfile', req.params, function (err, results) {
-        console.log(req.body);
+        console.log("Line 1384",req.params);
         console.log('in result');
         console.log(results);
         if (err) {
