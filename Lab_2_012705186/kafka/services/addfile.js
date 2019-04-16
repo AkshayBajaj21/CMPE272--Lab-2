@@ -17,6 +17,7 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage });
+app.use(express.static(__dirname + '/public'));
 
 function handle_request(msg, callback) {
     let returnObj = {};

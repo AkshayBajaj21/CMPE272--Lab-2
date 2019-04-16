@@ -26,7 +26,7 @@ export class File extends Component {
     .then((response)=>{
        console.log(response.data);
       this.setState({
-        file: response.data.data.data
+        file: response.data.data.lectures
       })
     });
   }
