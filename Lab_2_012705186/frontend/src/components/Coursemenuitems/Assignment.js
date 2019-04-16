@@ -93,7 +93,12 @@ export class Assignment extends Component {
                         <div className="col-3"><Coursemenu cid = {this.state.cid}/></div>
                         <div className="col-9">
                             {assignment.map((assignment, index) => {
-                                return <div key={index}><h5>{assignment.assignment}<hr /></h5></div>
+                                return <div key={index}><h5>{assignment.assignment}<hr /></h5>
+                                {(Cookies.get('role')==="student")
+                                ?<form onSubmit={this.submitHandler}><button className="btn btn-danger" onClick={this.removeClick}>REMOVE</button></form>
+                                :<span></span>
+                                }
+                            </div>
                             })}
                             {(isFaculty)?
                             <form>
