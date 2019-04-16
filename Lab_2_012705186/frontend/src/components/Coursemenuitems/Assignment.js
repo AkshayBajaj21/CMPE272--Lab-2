@@ -98,8 +98,8 @@ export class Assignment extends Component {
                         <div className="col-9">
                             {assignment.map((assignment, index) => {
                                 return <div key={index}><h5>{assignment.assignment}<hr /></h5>
-                                 <input type="text" placeholder="Student ID" ></input>  &nbsp;&nbsp;
-                                 <input type="text" placeholder="Grade" ></input> &nbsp;&nbsp;
+                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Student ID" ></input>:null}  &nbsp;&nbsp;
+                                 <input type="text" placeholder="Grade" ></input>:null} &nbsp;&nbsp;
                                 {(Cookies.get('role')==="student")
                                 ?<button className="btn btn-danger" onClick={this.gradeHandler}>GRADE</button>
                                 :<span></span>
@@ -114,6 +114,14 @@ export class Assignment extends Component {
                         </div>
 
                     </div>
+                    <div>
+                    {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null}
+                    {(Cookies.get('role')==="student")?
+                            <form onSubmit={this.submitHandler}>                            
+                                <textarea rows="5" cols="50" placeholder="Assignment" onChange={this.contentHandler}></textarea><br/>
+                                <input type="submit" value="Submit" className="btn btn-primary"></input>
+                            </form> :null}
+                            </div>
                     <div class="wrapper">
                          <button  class="button" className="btn btn-primary" onClick={this.previousPageHandler}>Previous Page</button>&nbsp;&nbsp;
                          <button class="button" className="btn btn-primary" onClick={this.nextPageHandler}>Next Page</button>
