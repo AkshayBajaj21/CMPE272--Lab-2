@@ -69,7 +69,7 @@ export class File extends Component {
             <div className="col-9 coursecolumn">
               <h3 ><b>Files</b></h3>
               {files.map((file,index)=>{
-                return <div key={index} className="filelist" ><a href={`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/upload/${file.fpath}`} download target="_blank" rel="noopener noreferrer" >{file.fname}</a></div>
+                return <div key={index} className="filelist" ><a href={`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/public/upload/${file.fpath}`} download target="_blank" rel="noopener noreferrer" >{file.fname}</a></div>
               })}
               <br/>
               <br/>
