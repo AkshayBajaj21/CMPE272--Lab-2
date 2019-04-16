@@ -35,7 +35,7 @@ function handle_request(msg, callback) {
         assignmentFlag = 1;  
         assignmentSkip = doc[0].assignmentinfo.length ;
       }    
-      if(assignmentoffset >= assignmentSkip && (assignmentFlag != 1){
+      if(assignmentoffset >= assignmentSkip && (assignmentFlag != 1)){
         assignmentoffset -= 4;
       } 
       console.log("latest value to calculate is assignmentoffset is "+assignmentoffset+" and people assignmentSkip is "+assignmentSkip)               
