@@ -94,8 +94,10 @@ export class Assignment extends Component {
                         <div className="col-9">
                             {assignment.map((assignment, index) => {
                                 return <div key={index}><h5>{assignment.assignment}<hr /></h5>
+                                 <input type="text" placeholder="Student ID" ></input>  &nbsp;&nbsp;
+                                <textarea rows="5" cols="50" placeholder="Grade" ></textarea> &nbsp;&nbsp;
                                 {(Cookies.get('role')==="student")
-                                ?<form onSubmit={this.submitHandler}><button className="btn btn-danger" onClick={this.removeClick}>REMOVE</button></form>
+                                ?<form onSubmit={this.submitHandler}><button className="btn btn-danger" onClick={this.removeClick}>GRADE</button></form>
                                 :<span></span>
                                 }
                             </div>
