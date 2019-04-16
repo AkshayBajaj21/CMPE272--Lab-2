@@ -36,7 +36,7 @@ function handle_request(msg, callback) {
             messageFlag = 1;  
             messageSkip = doc.length ;
           }    
-          if(messageoffset >= messageSkip){
+          if(messageoffset >= messageSkip && (messageFlag !=1)){
             messageoffset -= 2;
           } 
         var messages = [];

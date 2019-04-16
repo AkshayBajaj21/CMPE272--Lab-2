@@ -35,7 +35,7 @@ function handle_request(msg, callback) {
             announcementFlag = 1;  
             announcementSkip = doc[0].announcementinfo.length ;
           }    
-          if(announcementoffset >= announcementSkip){
+          if(announcementoffset >= announcementSkip && (announcementFlag != 1)){
             announcementoffset -= 4;
           } 
           console.log("total student are ",doc[0].announcementinfo.length)
