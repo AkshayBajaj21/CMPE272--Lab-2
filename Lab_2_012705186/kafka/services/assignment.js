@@ -29,7 +29,8 @@ function handle_request(msg, callback) {
     Courses.find({courseid : msg.id})
     .exec()
     .then(doc => {
-      var assignment = [];          
+      var assignment = []; 
+       if(assignmentSkip > doc[0].assignmentinfo.length)        
       if(assignmentSkip > doc[0].assignmentinfo.length){
         assignmentFlag = 1;  
         assignmentSkip = doc[0].assignmentinfo.length ;
@@ -39,7 +40,7 @@ function handle_request(msg, callback) {
       } 
       console.log("latest value to calculate is assignmentoffset is "+assignmentoffset+" and people assignmentSkip is "+assignmentSkip)               
 
-       for(let i = assignmentoffset;i<(assignmentSkip);i++ ){
+       for(let i = assignmentoffset;i<( doc[0].assignmentinfo.length);i++ ){
         let info={};
         //console.log("Entered mongoose quiz list and data is ",doc[0].assignmentinfo[i].assignment)
         info.assignment = doc[0].assignmentinfo[i].assignment;

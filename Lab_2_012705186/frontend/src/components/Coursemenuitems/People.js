@@ -27,11 +27,9 @@ export class People extends Component {
        axios.get(`http://ec2-54-215-144-28.us-west-1.compute.amazonaws.com:3001/course/${this.state.cid}/people/${this.state.page}`)
        .then((response) => {
         //  console.log("peoples returned in frontend : " + response.data.data.people);
-        if(response.data.data.people){
-        this.setState({      
+         this.setState({      
           people : response.data.data.people
           });
-        }
         //  console.log("result of profile im frontend is  " +this.state.people.studentname);
      });
     }
