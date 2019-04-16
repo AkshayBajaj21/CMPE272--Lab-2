@@ -104,26 +104,24 @@ export class Assignment extends Component {
                         <div className="col-9">
                             {assignment.map((assignment, index) => {
                                 return <div key={index}><h5>{assignment.assignment}<hr /></h5>
-                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Student ID" ></input>:null}  &nbsp;&nbsp;
-                                 <input type="text" placeholder="Grade" ></input>:null} &nbsp;&nbsp;
+                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Student ID" ></input>:<span></span>}  &nbsp;&nbsp;
+                               {(Cookies.get('role')==="student")?<input type="text" placeholder="Grade" ></input>:<span></span>} &nbsp;&nbsp;
                                 {(Cookies.get('role')==="student")
                                 ?<button className="btn btn-danger" onClick={this.gradeHandler}>GRADE</button>
                                 :<span></span>
                                 }
                             </div>
                             })}
-                            {(isFaculty)?
+                            {/* {(isFaculty)?
                             <form>
                                 <h3>Upload Assignment:   </h3><input type="file" name="lecturenote" onChange={this.touploadHandler} />
                                 <input type="submit" value="Upload" />
-                            </form>:null}
+                            </form>:null} */}
                         </div>
 
-                    </div>
-                    <div>
+                    
                     {(Cookies.get('role')==="student")?<h5>Make new assignment</h5>:null}
-                    {(Cookies.get('role')==="student")?
-                            <form onSubmit={this.submitHandler}>                            
+                    {(Cookies.get('role')==="student")?<form onSubmit={this.submitHandler}>                            
                                 <textarea rows="5" cols="50" placeholder="Assignment" onChange={this.contentHandler}></textarea><br/>
                                 <input type="submit" value="Submit" className="btn btn-primary"></input>
                             </form> :null}
