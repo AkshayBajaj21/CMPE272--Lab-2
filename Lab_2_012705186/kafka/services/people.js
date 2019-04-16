@@ -33,13 +33,14 @@ function handle_request(msg, callback) {
       var people = []; 
       var l = doc[0].studentinfo.length
       console.log("Line 35",l)
+      console.log("Line 36",peopleSkip)
       if(peopleSkip >= l){
         peopleFlag = 1;  
         peopleSkip = l;
         console.log("Line 35=7",peopleSkip)
         
       }    
-      if(offset >= peopleSkip){
+      if(offset >= peopleSkip && (peopleFlag != 1)){
         offset -= 4;
       } 
 
