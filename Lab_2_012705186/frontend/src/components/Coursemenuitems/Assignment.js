@@ -19,7 +19,7 @@ export class Assignment extends Component {
             page : "nothing",
             toupload: ""
         }
-        this.touploadHandler = this.touploadHandler.bind(this);
+        // this.touploadHandler = this.touploadHandler.bind(this);
         this.previousPageHandler = this.previousPageHandler.bind(this);
         this.nextPageHandler = this.nextPageHandler.bind(this);
         this.gradeHandler = this.gradeHandler.bind(this);
@@ -43,6 +43,7 @@ export class Assignment extends Component {
          alert("Grade assigned to student successfully");  
          this.props.history.push(`/course/${this.state.cid}/info`);
     }
+
     nextPageHandler = (e) => {
         // e.preventDefault();
        new Promise((resolve,reject) =>{
