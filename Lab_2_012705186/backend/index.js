@@ -1333,26 +1333,28 @@ app.post("/signup", (req,res) => {
 // });
 
 app.get("/course/:id/file", (req, res) => {
-    req.params.body= req.body
-    kafka.make_request('file', req.params, function (err, results) {
-        console.log(req.params.body);
-        console.log('in result');
-        console.log(results);
-        if (err) {
-            console.log("Inside err");
-            res.json({
-                status: "error",
-                msg: "System Error, Try Again."
-            })
-        } else {
-            console.log("Inside else");
-            res.json({
-                data: results
-            });
-            res.end();
-        }
+    let returnObj = {};
+        Lectures.find({cid:req.params.id})
+        .select("cid fname fpath")
+        .exec()
+        .then(doc => { 
+                var lectures = [];
+                    for(let i=0;i<doc.length;i++){
+                        let info={};
+                        info.cid = doc[i].cid;
+                        info.fname = doc[i].fname;
+                        info.fpath = doc[i].fpath;
+                        lectures.push(info);   
+                        console.log(info)     
+                    }
+                    returnObj.lectures = lectures;
+                    returnObj.data = doc;
+                    returnObj.message = "success";
+                    res.json(returnObj);})
+        .catch(err => {
+        console.log(err);
+        })
     });
-})
     // let returnObj = {};
     //     Lectures.find({cid:req.params.id})
     //     .select("cid fname fpath")
