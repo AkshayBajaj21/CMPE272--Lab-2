@@ -58,7 +58,7 @@ export class Person extends Component {
             <div className="col-2 statcol">
                 {(Cookies.get('role')==="faculty")
                 ?<form onSubmit={this.submitHandler}><button className="btn btn-danger" onClick={this.removeClick}>REMOVE</button></form>
-                :<span></span>
+                :null
                 }
             </div>
         </div>
