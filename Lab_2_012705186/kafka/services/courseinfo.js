@@ -15,18 +15,12 @@ function handle_request(msg, callback) {
     .exec()
     .then(doc => {
           var l = doc[0].studentinfo.length;
-          console.log("length of students is" ,doc[0].studentinfo[0])
-          console.log("length of students is" ,l)
-          console.log("length of students is" ,doc[0].studentinfo[1].uid)
-          console.log("length of students is" ,uid2)
-          console.log("length of students is" ,doc[0].studentinfo[1].status)
-          console.log("length of students is" ,uid2)
           for (let i=0; i < l; i++){
-          console.log(" ",doc[0].studentinfo[i].uid)
+          // console.log(" ",doc[0].studentinfo[i].uid)
           if((doc[0].studentinfo[i].uid) == uid2){
              
             studentStatus = doc[0].studentinfo[i].status;
-            console.log("studnet status is at 572",studentStatus);
+            // console.log("studnet status is at 572",studentStatus);
             
           }
       }
