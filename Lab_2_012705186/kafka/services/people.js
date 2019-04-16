@@ -31,16 +31,15 @@ function handle_request(msg, callback) {
     .exec()
     .then(doc => {
       var people = []; 
-      if(peopleSkip > doc[0].studentinfo.length){
+      var l = doc[0].studentinfo.length
+      console.log("Line 35",l)
+      if(peopleSkip > l){
         peopleFlag = 1;  
         peopleSkip = doc[0].studentinfo.length ;
       }    
       if(offset >= peopleSkip){
         offset -= 4;
       } 
-      if(peopleSkip > doc[0].studentinfo.length  ){
-        peopleSkip = doc[0].studentinfo.length
-      }
 
       console.log("total student are ",doc[0].studentinfo.length)
       console.log("latest value to calculate is offset is "+offset+" and people skip is "+peopleSkip)               
