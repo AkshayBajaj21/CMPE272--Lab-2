@@ -46,6 +46,8 @@ function handle_request(msg, callback) {
         callback('err');
     })  }
     else{
+
+    console.log("entered student course info")
         Courses.find().skip(skip).limit(limit).sort({"courseid" : 1})
         .exec()
         .then(doc => { 
