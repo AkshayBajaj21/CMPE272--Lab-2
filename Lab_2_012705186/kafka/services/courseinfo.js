@@ -16,8 +16,8 @@ function handle_request(msg, callback) {
     .then(doc => {
           console.log("length of students is" ,doc[0].studentinfo[1])
           console.log("length of students is" ,doc[0].studentinfo.length)
-          console.log("length of students is" ,doc[0].studentinfo.uid)
-          console.log("length of students is" ,doc[0].studentinfo.status)
+          console.log("length of students is" ,doc[0].studentinfo[1].uid)
+          console.log("length of students is" ,doc[0].studentinfo[1].status)
           console.log("length of students is" ,uid)
           for (let i=0; i < doc[0].studentinfo.length; i++){
           if(doc[0].studentinfo[i].uid === uid){
