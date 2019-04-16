@@ -73,12 +73,11 @@ export class File extends Component {
               })}
               <br/>
               <br/>
-              {(isStudent)
-              ?<form onSubmit={this.submitHandler}>
+              <form onSubmit={this.submitHandler}>
                 <input type='file' onChange={this.fileHandler} required/>
                 <button type='submit' className="btn btn-primary">Upload</button>
               </form>
-              :null}
+              
             </div>
           </div>
         </div>
