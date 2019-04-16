@@ -27,6 +27,7 @@ function handle_request(msg, callback) {
              
             studentStatus = doc[0].studentinfo[i].status;
             console.log("studnet status is at 572",studentStatus);
+            
           }
       }
        if (studentStatus === 'enroll' || studentStatus ==='waitlist'){
@@ -34,8 +35,9 @@ function handle_request(msg, callback) {
         returnObj.status = studentStatus;  
        } 
        else{
+        studentStatus = "none"
         console.log("The status is "+ studentStatus)
-        returnObj.status = "none";
+        
         returnObj.status = studentStatus;  
        }
        var information = [];                  
