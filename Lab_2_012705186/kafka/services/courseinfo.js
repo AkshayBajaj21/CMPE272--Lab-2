@@ -10,7 +10,7 @@ function handle_request(msg, callback) {
     let uid2 = currentuser.id;
     let ccid  = msg.id
     let studentStatus;
-    console.log(uid);
+    console.log(uid2);
     Courses.find({courseid : ccid})
     .exec()
     .then(doc => {
