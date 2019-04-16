@@ -33,7 +33,7 @@ function handle_request(msg, callback) {
       var people = []; 
       var l = doc[0].studentinfo.length
       console.log("Line 35",l)
-      if(peopleSkip > l){
+      if(peopleSkip >= l){
         peopleFlag = 1;  
         peopleSkip = l;
         console.log("Line 35=7",peopleSkip)
