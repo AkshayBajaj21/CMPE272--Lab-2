@@ -23,6 +23,7 @@ export class Assignment extends Component {
         this.previousPageHandler = this.previousPageHandler.bind(this);
         this.nextPageHandler = this.nextPageHandler.bind(this);
         this.gradeHandler = this.gradeHandler.bind(this);
+        this.contentHandler = this.contentHandler.bind(this);
     }
 
     componentDidMount(){
@@ -43,6 +44,11 @@ export class Assignment extends Component {
          alert("Grade assigned to student successfully");  
          this.props.history.push(`/course/${this.state.cid}/info`);
     }
+    contentHandler = (e) => {
+      e.preventDefault();
+       alert("Grade assigned to student successfully");  
+       this.props.history.push(`/course/${this.state.cid}/info`);
+  }
 
     nextPageHandler = (e) => {
         // e.preventDefault();
