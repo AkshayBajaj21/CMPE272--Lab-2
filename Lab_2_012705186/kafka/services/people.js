@@ -38,6 +38,10 @@ function handle_request(msg, callback) {
       if(offset >= peopleSkip){
         offset -= 4;
       } 
+      if(peopleSkip > doc[0].studentinfo.length  ){
+        peopleSkip = doc[0].studentinfo.length
+      }
+
       console.log("total student are ",doc[0].studentinfo.length)
       console.log("latest value to calculate is offset is "+offset+" and people skip is "+peopleSkip)               
        for(let i = offset;i<(peopleSkip);i++){
