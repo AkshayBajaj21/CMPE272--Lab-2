@@ -14,7 +14,8 @@ function handle_request(msg, callback) {
     Courses.find({courseid : ccid})
     .exec()
     .then(doc => {
-        //   console.log("length of students is" ,doc[0].studentinfo[0].uid)
+          console.log("length of students is" ,doc[0].studentinfo[0])
+          console.log("length of students is" ,doc[0].studentinfo.length)
           for (let i=0; i < doc[0].studentinfo.length; i++){
           if(doc[0].studentinfo[i].uid === uid){
             studentStatus = doc[0].studentinfo[i].status;
