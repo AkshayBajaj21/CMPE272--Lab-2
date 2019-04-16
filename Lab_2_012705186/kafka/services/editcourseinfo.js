@@ -13,7 +13,7 @@ function handle_request(msg, callback) {
         let returnObj = {};
         if(msg.msg.action==="drop"){
             console.log("entered action == drop"); 
-            Courses.updateOne({ courseid : cid }, { $pull : {studentinfo : { uid: userid}}})
+            Courses.updateOne({ courseid : cid }, { $push : {studentinfo : { uid: userid}}})
             .exec()
             .then( result => {
                    console.log("Entered update profile of mongoose db and result is",result);
