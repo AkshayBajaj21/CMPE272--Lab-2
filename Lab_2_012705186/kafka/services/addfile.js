@@ -6,17 +6,17 @@ const Lectures = require('../models/lectures');
 var cu = require('../api/data')
 var currentuser = cu.getUser();
 
-var filepath = "";
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/upload/')
-    },
-    filename: function (req, file, cb) {
-        filepath = file.originalname + Date.now() + path.extname(file.originalname)
-        cb(null, filepath);
-    }
-});
-var upload = multer({ storage: storage });
+// var filepath = "";
+// var storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, './public/upload/')
+//     },
+//     filename: function (req, file, cb) {
+//         filepath = file.originalname + Date.now() + path.extname(file.originalname)
+//         cb(null, filepath);
+//     }
+// });
+// var upload = multer({ storage: storage });
 
 
 function handle_request(msg, callback) {
@@ -27,7 +27,7 @@ function handle_request(msg, callback) {
             _id: new mongoose.Types.ObjectId(),
             cid :   msg.id,
             fname : msg.msg.originalname,
-            fpath : filepath   
+            fpath : msg.filepath   
         });
         lectures.save().then(result => {
            console.log("Entered update people list of mongoose db and result is",result);

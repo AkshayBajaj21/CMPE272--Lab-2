@@ -1334,6 +1334,7 @@ app.post("/signup", (req,res) => {
 
 app.get("/course/:id/file", (req, res) => {
     req.params.body= req.body
+    req.params.filepath= filepath
     kafka.make_request('file', req.params, function (err, results) {
         console.log(req.params.body);
         console.log('in result');
