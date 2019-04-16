@@ -10,6 +10,7 @@ function handle_request(msg, callback) {
     console.log('inside kafka course');
     let returnObj = {};
     if(currentuser.role == "faculty"){
+        console.log("entered faculty course info")
     Courses.find({facultyid : currentuser.id}).skip(skip).limit(limit).sort({"courseid" : 1})
     .exec()
     .then(doc => { 
@@ -48,7 +49,7 @@ function handle_request(msg, callback) {
     else{
 
     console.log("entered student course info")
-        Courses.find().skip(skip).limit(limit).sort({"courseid" : 1})
+        Courses.find({facultyid : 2012}).skip(skip).limit(limit).sort({"courseid" : 1})
         .exec()
         .then(doc => { 
             var courses = [];
