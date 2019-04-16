@@ -22,6 +22,7 @@ export class Assignment extends Component {
         this.touploadHandler = this.touploadHandler.bind(this);
         this.previousPageHandler = this.previousPageHandler.bind(this);
         this.nextPageHandler = this.nextPageHandler.bind(this);
+        this.gradeHandler = this.gradeHandler.bind(this);
     }
 
     componentDidMount(){
@@ -37,8 +38,10 @@ export class Assignment extends Component {
  
        }
 
-    touploadHandler = (e) => {
-
+       gradeHandler = (e) => {
+        e.preventDefault();
+         alert("Grade assigned to student successfully");  
+         this.props.history.push(`/course/${this.state.cid}/info`);
     }
     nextPageHandler = (e) => {
         // e.preventDefault();
@@ -97,7 +100,7 @@ export class Assignment extends Component {
                                  <input type="text" placeholder="Student ID" ></input>  &nbsp;&nbsp;
                                  <input type="text" placeholder="Grade" ></input> &nbsp;&nbsp;
                                 {(Cookies.get('role')==="student")
-                                ?<form onSubmit={this.submitHandler}><button className="btn btn-danger" onClick={this.removeClick}>GRADE</button></form>
+                                ?<button className="btn btn-danger" onClick={this.gradeHandler}>GRADE</button>
                                 :<span></span>
                                 }
                             </div>
