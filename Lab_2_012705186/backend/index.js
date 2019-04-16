@@ -1572,9 +1572,7 @@ app.post("/course/:id/assignment", (req,res) => {
     let returnObj = {}
     var cid = req.params.id;
     var content = req.body.content;
-    var info = {
-        'content' : content
-        }
+    var info = {'assignment' : content}
         Courses.updateOne({'courseid': req.params.id }, {$push: {assignmentinfo: info}})
         .exec()
         .then( result => {
